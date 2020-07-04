@@ -9,12 +9,21 @@ header {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-image: url("../images/hero-bg.jpg");
+    background-size: cover;
+    position: relative;
+    background-attachment: fixed;
+    background-position: 80%;
   }
 header h1 {
   font-weight: bold;
   font-size: 36px;
   color: #fce138;
   margin: 0;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 header a {
   text-decoration: none;
@@ -37,6 +46,13 @@ header nav ul li a {
   margin: 0 30px;
   font-weight: lighter;
   font-size: 1.55vw;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+header nav ul li a:hover {
+  background: #fce138;
+  color: #024e76;
+  border-radius: 15px;
+  text-shadow: none;
 }
 header h1 {
   font-weight: bold;
@@ -94,6 +110,7 @@ section {
   font-style: italic;
   font-size: 55px;
   color: #fce138;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 .hero {
   background-image: url("../images/hero-bg.jpg");
@@ -102,14 +119,18 @@ section {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  background-attachment: fixed;
+  background-position: 80%;
 }
 .hero-form {
   border: 3px solid #024e76;
-  background-color: #fce138;
+  background-color: rgba(252, 225, 56, 0.8);
   padding: 20px;
   color: #024e76;
   margin: 3.5%;
   width: 40%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
 }
 .hero-form h3 {
   font-size: 24px;
@@ -129,6 +150,12 @@ section {
   color: #024e76;
   width: 100%;
   margin-bottom: 15px;
+  border-radius: 10px;
+  background-color: rgba(255,255,255, 0.75);
+}
+.form-input:focus {
+  background-color: rgba(255,255,255, 1);
+  outline: none;
 }
 .hero-form button {
   color: #fce138;
@@ -136,6 +163,10 @@ section {
   border: none;
   padding: 10px 20px;
   font-size: 16px;
+  border-radius: 10px;
+}
+.hero-form button:hover {
+  background-color: #39a6b2;  
 }
 /* Hero Style End */
 body {
@@ -152,7 +183,7 @@ body {
   margin: 0 auto;
   text-align: center
 }
-.steps { 
+.step { 
   background: #fce138;
 }
 
@@ -213,6 +244,12 @@ body {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+}
+.step:nth-child(even) {
+  border-bottom: 1px solid #39a6b2;
+}
+.step:not(:last-child) {
+  border-bottom: 1px solid #39a6b2;
 }
 
 /* SERVICE STYLES BEGIN */
@@ -347,7 +384,9 @@ body {
   width: 100%;
   margin-bottom: 15px;
   margin-top: 5px;
+  border-radius: 10px;
 }
+
 .contact-form button{
   width: 100%;
   border: none;
@@ -356,6 +395,11 @@ body {
   text-align: center;
   padding: 15px 0;
   font-size: 16px;
+  border-radius: 10px;
+}
+.contact-form button:hover {
+  color: #fce138;
+  background: #39a6b2;
 }
 
 .contact-info a {
@@ -388,4 +432,8 @@ body {
   }
 }
 
-
+@media screen and (max-width: 980px){
+  .header-position {
+    position: relative;
+  }
+}
